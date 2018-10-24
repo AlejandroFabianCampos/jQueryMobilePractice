@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simulador de Física</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Librerias de jQuery y jQueryMobile-->
+    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--Libreria de google y archivos para hacer funcionar los gráficos-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../jsFiles/tiroVerticalDrawFile.js"></script>
+</head>
+<body>
+    <div data-role="page" data-theme="b" id="page1">
+        <div data-role="header">
+            <h1>¡Bienvenidos a mi simulador de tiro vertical y caida libre!</h1>
+        </div>
+        <div role="main" class="ui-content" id="mainPart">
+            <h3>Elija el tipo de sistema que quiere visualizar:</h3>
+            <form>
+                <div class="buttonBlocks">
+                    <a href="#page2" class="button" data-ajax="false" data-prefetch="true">Tiro vertical</a> 
+                    <img src="IMG/tiro-vertical.jpg" class="imgSpacing">
+                </div>
+                <div class="buttonBlocks">
+                    <a href="htmlFiles/caidaLibre.html" class="button">Caída libre</a>
+                    <img src="IMG/caida_libre.jpg" class="imgSpacing">
+                </div>
+                <div class="buttonBlocks">
+                    <a href="htmlFiles/tiroCaida.html" class="button">Tiro vertical con caida libre subsecuente</a>
+                    <img src="IMG/Tiro_Vertical_Caida.png" class="imgSpacing">
+                </div>
+            </form>
+        </div>
+        <div data-role="footer">
+            <p>Creado por Alejandro Campos, con la colaboración del tema de Enzo Capellino y utilizando las clases de Luis Funes.</p>
+        </div>
+    </div>
+    <div data-role="page" id="page2">
+            <header>
+                <a href="#page1" class="button">Volver al menú principal.</a>
+            </header>
+            <div>
+                <div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="valMasa">
+                        <strong>La masa del objeto lanzado es de: <strong id="showMasa"></strong> kg.</strong>
+                        <p id="showMasa"></p>
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="valVelocidadInicial">
+                        <strong>La velocidad inicial es: <strong id="showVelocidad"></strong> m/s.</strong>
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="valGravedad">
+                        <strong>La aceleración de la gravedad es de: <strong id="showGravedad"></strong> m/s<sup>2</sup>. (La aceleración de la gravedad en la Tierra es de 10 m/s<sup>2</sup>.</strong>
+                    </div>
+                </div>
+                <div>
+                    <div id="chart_div" style="width: 900px; height: 500px"></div>
+                </div>
+            
+            
+            <!--llamando al archivo para armar los gráficos -->
+            <script src="../jsFiles/tiroVerticalFile.js"></script>
+            
+            
+    
+            </div>
+        </div>
+</body>
+</html>
